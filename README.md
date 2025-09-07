@@ -14,7 +14,9 @@ Support users with fun simple features and questions
 - Sound card Hi-Fi WM8960 Waveshare for raspberry pi4
 - Raspberry Pi Screen
 - Waveshare UPS HAT (B) for Raspberry Pi
+- 2 Pin 18650
 2. chassis part
 - STM32
 - H-bridge
-- 
+- 4 Gear Motors
+- 3 Pin 18650
