@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="input"/>
+        <attribute name="authors" value="admin"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2025-10-14 08:17:34 PM"/>
+        <attribute name="created" value="YWRtaW47REVTS1RPUC1GMTlVNDc5OzIwMjUtMTAtMTQ7MDc6MDk6MjggUE07MjgxNA=="/>
+        <attribute name="edited" value="YWRtaW47REVTS1RPUC1GMTlVNDc5OzIwMjUtMTAtMTQ7MDg6MTc6MzQgUE07NzsyOTI1"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="speechfq" type="Real" array="False" size=""/>
+            <input variable="speechfq"/>
+            <if expression="speechfq&gt;100">
+                <then>
+                    <if expression="speechfq&lt;8000">
+                        <then>
+                            <output expression="speechfq" newline="True"/>
+                            <assign variable="speechfq" expression="bandpass(speechfq)"/>
+                            <comment text="chuy&#7875;n gi&#7885;ng n&#243;i th&#224;nh v&#259;n b&#7843;n"/>
+                            <assign variable="textin" expression="speechrecogniziton(speechfq)"/>
+                            <output expression="textin" newline="True"/>
+                        </then>
+                        <else>
+                            <output expression="&quot;kh&#244;ng ph&#225;t hi&#7879;n gi&#7885;ng n&#243;i&quot;" newline="True"/>
+                        </else>
+                    </if>
+                </then>
+                <else>
+                    <output expression="&quot;kh&#244;ng ph&#225;t hi&#7879;n gi&#7885;ng n&#243;i&quot;" newline="True"/>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>

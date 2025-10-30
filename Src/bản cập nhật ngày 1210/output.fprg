@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="output"/>
+        <attribute name="authors" value="admin"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2025-10-14 08:21:39 PM"/>
+        <attribute name="created" value="YWRtaW47REVTS1RPUC1GMTlVNDc5OzIwMjUtMTAtMTQ7MDg6MDY6MTIgUE07MjgwNQ=="/>
+        <attribute name="edited" value="YWRtaW47REVTS1RPUC1GMTlVNDc5OzIwMjUtMTAtMTQ7MDg6MjE6MzkgUE07MjsyOTIw"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <input variable="textout"/>
+            <assign variable="speechout" expression="pyttsx(textout)"/>
+            <output expression="speechout" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

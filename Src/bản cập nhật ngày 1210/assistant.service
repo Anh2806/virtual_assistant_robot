@@ -1,0 +1,19 @@
+[Unit]
+Description=Assistant Nam
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+ExecStart=/home/pi/Downloads/test/start_assistant.sh
+WorkingDirectory=/home/pi/Downloads/test
+User=pi
+Restart=always
+Environment=PYTHONUNBUFFERED=1
+Environment=XDG_RUNTIME_DIR=/run/user/1000
+
+# Ghi log vào file
+StandardOutput=append:/home/pi/Downloads/test/assistant.log
+StandardError=append:/home/pi/Downloads/test/assistant_error.log
+
+[Install]
+WantedBy=multi-user.target
