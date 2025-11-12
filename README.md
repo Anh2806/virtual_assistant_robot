@@ -1,5 +1,15 @@
 # AI integrated assistant robot
-Support users with fun simple features and questions
+
+## Motivation & Impact
+
+**Natural, accessible interface.** Voice assistants provide a natural UI for real-world needs across smart homes, teaching assistants in education, and support for older adults and people with disabilities. A small, affordable, and standalone device can expand access to services and lower technical barriers for everyday users.
+
+**Modern stack, balanced design.** Rapid advances in large language models (LLMs) such as Google Gemini enable strong natural-language capabilities: open-ended Q&A, sustained dialogue, summarization, instruction generation, and action orchestration. Combining a cloud LLM with a local pipeline (wake word, VAD, DSP) creates a practical balance of language understanding, latency, and privacy.
+
+**Feasible and cost-effective.** Raspberry Pi 4 is widely available, reasonably priced, and powerful enough for lightweight tasks (wake-word detection, DSP, orchestration) while connecting easily to cloud services for LLM/TTS. The WM8960 audio HAT plus a Waveshare 3.5″ display deliver low-cost audio and a physical interface that integrates cleanly. This makes the project technically and economically feasible for pilot deployments in labs or student teams.
+
+**Research value.** Building a compact voice assistant lets us tackle real-world constraints: optimizing the pipeline to reduce latency, handling environmental noise, balancing on-device vs. cloud processing to preserve privacy, and adding an expressive face engine to improve user experience. The results can contribute to smart IoT applications, home assistants, educational support, and Vietnamese language technology research.
+
 
 ## features
 - Voice chat
