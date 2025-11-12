@@ -43,17 +43,25 @@ Support users with fun simple features and questions
 
 ## 🧩 Recommended Hardware
 - Raspberry Pi 4 (4GB) with 5V ≥3A power.
+  <img width="390" height="250" alt="image" src="https://github.com/user-attachments/assets/879f3245-8aec-4f5a-b8dc-11d010cd82f8" />
+
 - WM8960 Hi-Fi Audio HAT (mic/line + I²S).
+  <img width="246" height="214" alt="image" src="https://github.com/user-attachments/assets/52389699-3c88-4201-93e6-d3028cc4a3ee" />
+
 - Waveshare 3.5" SPI LCD.
+  <img width="605" height="316" alt="image" src="https://github.com/user-attachments/assets/19ae665e-149a-448e-9d83-7d9e690868d5" />
+
 - (Optional) UPS HAT, external speaker.  
 > Pinout, BOM, and rationale are described in the report (I²S/I²C/SPI GPIO, tables, and notes).
 
 ## Demo
-<img width="1920" height="2560" alt="image" src="https://github.com/user-attachments/assets/e432bd1a-79f8-4f20-bef2-233e633a6172" />
 
-<img width="1920" height="2560" alt="image" src="https://github.com/user-attachments/assets/f83c66b7-80e9-43ec-b8dd-a7939536b975" />
+<img width="1920" height="2560" alt="image" src="https://github.com/user-attachments/assets/46a62266-8292-4c22-810d-6fd8a0ae2eb9" />
 
-<img width="1920" height="2560" alt="image" src="https://github.com/user-attachments/assets/e790f5f8-4589-4c49-8440-70e29190fac6" />
+<img width="605" height="409" alt="image" src="https://github.com/user-attachments/assets/4b06cff9-67b0-470a-bac4-93b9419e9a7d" />
+
+
+
 
 ## 📦 Installation
 ### 1) OS & system packages (Raspberry Pi OS 64-bit recommended)
