@@ -11,26 +11,64 @@
 **Research value.** Building a compact voice assistant lets us tackle real-world constraints: optimizing the pipeline to reduce latency, handling environmental noise, balancing on-device vs. cloud processing to preserve privacy, and adding an expressive face engine to improve user experience. The results can contribute to smart IoT applications, home assistants, educational support, and Vietnamese language technology research.
 
 
-## features
-- Voice chat
-- Answer the questions to participate in AI Gemini
-- Integrated audio noise filtering algorithm
-- Integrated male and female voice discrimination
-1. Model included : Gender_voice_model
-- Facial emotions
-## Electronic equipment
-1. Virtual assistant robot
-- Raspberry pi4
-- Sound card Hi-Fi WM8960 Waveshare for raspberry pi4
-- Raspberry Pi Screen
+## Features
+- Two-way voice chat.
+- Open-ended Q&A powered by Google Gemini.
+- Built-in audio noise filtering.
+- Speaker gender classification (male/female).  
+  *Included model:* `Gender_voice_model`
+- Facial emotion display on the device screen.
+
+## Hardware
+### 1) Virtual Assistant Unit
+- Raspberry Pi 4
+- Waveshare WM8960 Hi-Fi Audio HAT for Raspberry Pi 4
+- Raspberry Pi display (Waveshare 3.5″ LCD)
 - Waveshare UPS HAT (B) for Raspberry Pi
-- 2 Pin 18650
-2. chassis part
-- STM32
-- H-bridge
-- 4 Gear Motors
-- 3 Pin 18650
-# Mini Interactive Voice Assistant Robot
+- 2 × 18650 cells
+
+### 2) Chassis / Mobility
+- STM32 microcontroller
+- H-bridge motor driver
+- 4 geared DC motors
+- 3 × 18650 cells
+
+<img width="605" height="702" alt="image" src="https://github.com/user-attachments/assets/9b3e1813-63fc-4652-b94f-5a1ca825d66d" />
+
+## Audio I/O Pipeline (Summary)
+
+**Capture (Analog Front-End)**
+- Electret mic → preamp + MICBIAS; set gain high enough for SNR but leave headroom to avoid clipping.
+- Anti-aliasing low-pass at the input; short traces, analog/digital ground separation, solid decoupling to minimize noise.
+
+**Digitization & Transport**
+- WM8960 codec: PGA gain, ADC, MICBIAS; outputs I²S audio.
+- Stable clocking (MCLK/BCLK/LRCLK) to reduce jitter and sampling errors; stream to Raspberry Pi 4 over I²S.
+
+**Processing on Raspberry Pi**
+- Optionally dump raw recordings (e.g., WAV/MP3) for offline analysis and as inputs to higher stages.
+- Noise reduction, band-pass filtering, normalization; optional feature extraction for ASR.
+- ASR converts speech → text; app logic sends text to Gemini (LLM) and receives the reply.
+- TTS synthesizes the reply to WAV/MP3; light post-processing (normalize/limit) before playback.
+
+**Playback (DAC & Output)**
+- Send audio back via I²S to WM8960; DAC + reconstruction filter → power/line amp → speaker.
+- Keep output headroom; optional bandwidth limiting to protect speakers and keep sound consistent.
+
+**Concurrency & Latency**
+- Use queues/threads: separate capture, processing, network/ASR, and playback to avoid blocking the real-time path.
+- End-to-end latency depends on frame size, buffer length, ASR time, and network RTT; tune buffers and consider local ASR for near-real-time interaction.
+
+**Practical Configuration**
+- Sample rate: 16 kHz for speech/ASR; 44.1 or 48 kHz for higher-fidelity audio.
+- Bit depth: 16-bit for a good quality/size trade-off.
+- Enable WM8960 PGA for hardware gain; place an analog low-pass before the ADC; ensure clean power and clocks.
+- Keep both raw and processed files for SNR measurement, error analysis, and algorithm tuning.
+
+**Monitoring & Maintenance**
+- Log signal levels, clipping events, and pipeline health.
+- Support runtime updates to gain and filter modes for long-term stability and consistent audio quality.
+
 
 > Raspberry Pi 4 + WM8960 + 3.5" LCD + voice pipeline (wake word → VAD/DSP → ASR → Gemini → TTS) with a simple “face” UI.
 
@@ -73,8 +111,6 @@
 
 
 <img width="605" height="409" alt="image" src="https://github.com/user-attachments/assets/4b06cff9-67b0-470a-bac4-93b9419e9a7d" />
-
-
 
 
 ## 📦 Installation
