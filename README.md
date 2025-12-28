@@ -107,7 +107,7 @@
 
 ## Demo
 
-<img width="1920" height="2560" alt="image" src="https://github.com/user-attachments/assets/46a62266-8292-4c22-810d-6fd8a0ae2eb9" />
+<img width="600" height="800" alt="image" src="https://github.com/user-attachments/assets/46a62266-8292-4c22-810d-6fd8a0ae2eb9" />
 
 
 <img width="605" height="409" alt="image" src="https://github.com/user-attachments/assets/4b06cff9-67b0-470a-bac4-93b9419e9a7d" />
